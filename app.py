@@ -19,7 +19,7 @@ model, tokenizer, max_len = load(model_path, tokenizer_path, max_sequence_path)
 async def ping():
     return "pong"
 
-@app.get("/predict")
+@app.post("/predict")
 async def query(query_input: QueryInput):
     # Hardcoded prediction for demonstration
     prediction = predict(query_input.query, model, tokenizer, max_len)
