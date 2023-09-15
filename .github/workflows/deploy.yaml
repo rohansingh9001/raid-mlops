@@ -1,0 +1,30 @@
+name: build on docker hub and deploy to server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
+
+    - name: set up docker buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: log in to docker hub
+      uses: docker/login-action@v1
+      with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: build and push docker image
+      uses: docker/build-push-action@v2
+      with:
+          context: ./
+          push: true
+          dockerfile: ./Dockerfile
+          tags: rohansingh9001/mlops:latest

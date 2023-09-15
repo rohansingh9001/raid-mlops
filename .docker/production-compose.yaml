@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mlops:
+    image: rohansingh9001/mlops:latest
+    ports:
+      - 80:8000
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    driver: bridge
