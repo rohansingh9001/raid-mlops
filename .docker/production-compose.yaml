@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   mlops:
     image: rohansingh9001/mlops:latest
@@ -6,10 +7,9 @@ services:
       - 8000:8000
     networks:
       - api-network
+
   mlops-frontend:
     image: rohansingh9001/mlops-frontend:latest
-    environment:
-      HOST: localhost
     ports:
       - 80:80
     networks:
