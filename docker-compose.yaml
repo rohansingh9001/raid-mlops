@@ -5,7 +5,16 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 80:8000
+      - 8000:8000
+    networks:
+      - api-network
+
+  mlops-frontend:
+    build:
+      context: client/
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
     networks:
       - api-network
 

@@ -1,9 +1,19 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from inference import load, predict
 import uvicorn
 
+
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "OPTIONS"],  # Add the allowed HTTP methods
+    allow_headers=["*"]  # Add the allowed headers
+)
 
 class QueryInput(BaseModel):
     query: str

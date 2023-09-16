@@ -3,7 +3,13 @@ services:
   mlops:
     image: rohansingh9001/mlops:latest
     ports:
-      - 80:8000
+      - 8000:8000
+    networks:
+      - api-network
+  mlops:
+    image: rohansingh9001/mlops-frontend:latest
+    ports:
+      - 80:80
     networks:
       - api-network
 
