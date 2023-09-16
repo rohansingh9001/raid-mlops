@@ -8,6 +8,8 @@ services:
       - api-network
   mlops-frontend:
     image: rohansingh9001/mlops-frontend:latest
+    environment:
+      HOST: localhost
     ports:
       - 80:80
     networks:

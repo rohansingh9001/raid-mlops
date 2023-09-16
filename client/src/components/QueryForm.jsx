@@ -12,7 +12,7 @@ function QueryForm() {
     event.preventDefault();
     
     try {
-      const response = await fetch('http://34.142.213.185:8000/predict', {
+      const response = await fetch('http://54.169.248.184:8000/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
