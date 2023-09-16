@@ -35,4 +35,4 @@ jobs:
           context: client/
           push: true
           dockerfile: ./Dockerfile
-          tags: rohansingh9001/mlops-fontend:latest
+          tags: rohansingh9001/mlops-frontend:latest
