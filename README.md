@@ -24,6 +24,7 @@ Clone the git repository into your local system `git clone https://github.com/ro
 5) Optional: Start the frontend server using react. You should have node (preferably v16) on your system.
 
 6) Change the IP address of the backend: Open `client/src/components/QueryForm.jsx` and change the API call to use your localhost.
+
 FROM
    ```
    const response = await fetch('http://54.169.248.184:443/predict', {
